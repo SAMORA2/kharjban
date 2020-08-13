@@ -11,4 +11,4 @@ git clone https://github.com/SAMORA2/kharjban && cd kharjban
 
 4.pip install -r requirements.txt.
 
-5.run main.py.
+5.run main.py
