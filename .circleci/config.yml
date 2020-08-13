@@ -6,24 +6,36 @@ orbs:
 jobs:
   build-and-test:
     executor: python/default
-    steps:
-      - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
-      - run:
-          name: install dependency
-          command: |
-            pip install -r requirements.txt
-      - run:
-          name: test
-          command: |
-            pytest src\test\test_cases.py
-
+    run_tests:
+        docker:
+            - image: circleci/python:3.7.4
+    run_tests:
+        steps:
+          - checkout
+          - python/load-cache
+          - python/install-deps
+          - python/save-cache
           
+          -run
+            name: install venv
+            command: |
+                sudo pip install pipenv
+                pipenv install
+          
+          - run:
+              name: install dependency
+              command: |
+                pip install -r requirements.txt
+                
+          - run:
+              name: test
+              command: |
+                pipenv run src\test\test_cases.py test
+
+              
 
 
-workflows:
-  main:
-    jobs:
-      - build-and-test
+    workflows:
+      main:
+        jobs:
+          - build-and-test
