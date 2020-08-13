@@ -12,10 +12,16 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command:
-            run python src\test\test_cases.py test
+          name: install dependency
+          command: |
+            pip install -r requirements.txt
+      - run:
+          name: test
+          command: |
+            pytest src\test\test_cases.py
+
           
-          name: Test
+
 
 workflows:
   main:
