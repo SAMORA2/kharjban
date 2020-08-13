@@ -6,7 +6,7 @@ from src.spider.spider import *
 
 @pytest.fixture(autouse=True)
 def clear_all_users():
-    conn = sqlite3.connect("D:\\Documents\\Projects\\PythonProjects\\kharjban\\src\\db\\db.wallet.db")
+    conn = sqlite3.connect("C:\\Users\\SAMO\\Desktop\\kharjban\\src\\db\\db.wallet.db")
     try:
         c = conn.cursor()
         c.execute("DELETE FROM users ")
@@ -16,7 +16,7 @@ def clear_all_users():
 
 
 def test_add_data():
-    conn = sqlite3.connect("D:\\Documents\\Projects\\PythonProjects\\kharjban\\src\\db\\db.wallet.db")
+    conn = sqlite3.connect("C:\\Users\\SAMO\\Desktop\\kharjban\\src\\db\\db.wallet.db")
     try:
 
         c = conn.cursor()
