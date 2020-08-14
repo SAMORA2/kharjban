@@ -1,6 +1,7 @@
 # kharjban
 Simple command line financial management wallet
 
+*expense tracker*
 ## Run on windows
 1.Install python3 , pip , git.
 
