@@ -2,7 +2,7 @@
 Simple command line financial management wallet
 
 ## Run on windows
-1.Install python3 , pip.
+1.Install python3 , pip , git.
 
 2.Clone the project https://github.com/SAMORA2/kharjban.git
 
